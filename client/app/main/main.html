@@ -1,0 +1,180 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  <br><br>
+    <h1>Doug Jacobson</h1>
+    <p class="lead">Full Stack JS development</p>
+    <img src="assets/images/pb_cover.jpg" alt="DJ at PB" >
+  </div>
+</header>
+
+<div class="container margin3 faq">
+    <div class="row">
+    <h2 class="text-center boldBlue">Welcome to my portfolio.  </h2>
+       <div class="col-sm-4">
+        <a href="/resume">
+          <img alt="polites" src="assets/images/briefcase.jpg" class="img-circle align-pic-center">
+        </a>  
+        <h3 class="boldBlue text-center">Professional Resume</h3>  
+        <p class="text-center text-less-emphasis">I am a mechanical engineer by training.  This is my professional resume.  It is current for 2015 </p>
+       </div>
+        <div class="col-sm-4">
+          <a href="/projects">
+            <img alt="polites" src="assets/images/stock-pic2.jpg" class="img-circle align-pic-center"  >
+          </a>
+          <h3 class="boldBlue text-center">Technical Projects</h3>  
+          <p class="text-center text-less-emphasis">Check out some of my professional projects, and programming experience.  For more information regarding any of my projects, please use the form below to send me an email.  </p>
+        </div>
+        <div class="col-sm-4">
+          <a href="/blog">
+            <img alt="polites" src="assets/images/stock-pic3.jpg" class="img-circle align-pic-center">
+          </a>  
+          <h3 class="boldBlue text-center">Blog</h3>  
+          <p class="text-center text-less-emphasis">Thoughts on business, life, investing, sports, philosophy, and the world we live in. </p>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}" class="imgCarousel">
+          <div class="carousel-caption">
+            <h4 class="text-carousel">{{$title}}</h4>
+            <p class="text-carousel">{{slide.text}}</p>
+          </div>
+        </slide>
+      </carousel>
+      </div>
+      <div class="col-sm-6">
+        
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" id="introSignUp">
+      <div class="col-sm-6">
+        <h2 class="boldBlue">Quick FAQ</h2>
+        <accordion close-others="oneAtATime" class='box-head'>
+            <accordion-group heading="Quick Background" is-open="status.isFirstOpen" class="box-faq">
+                  <ul>
+                    <li class="check-box">Mechanical Engineering (B.S / M.S)</li>
+                    <li class="check-box">7 years professional experience</li>
+                    <li class="check-box">HALT/HASS testing</li>
+                    <li class="check-box">CAD Design</li>
+                    <li class="check-box">Nuclear systems</li>
+                  </ul>
+              </accordion-group>
+          </accordion>
+          <accordion close-others="oneAtATime" class='box-head'>
+            <accordion-group heading="Skills" is-open="status.isFirstOpen" class="box-faq">
+                  <ul>
+                    <li class="check-box">Data acquisition, data reduction, Exploratory data analysis (EDA)</li>
+                    <li class="check-box">Programming: C, Matlab, R, Javascript</li>
+                    <li class="check-box">Computer Aided Design: Pro Engineer, Solidworks, Unigraphics</li>
+                    <li class="check-box">Technical writing - Publications, Grant writing</li>
+                    <li class="check-box">Hardware -  Networking, PC building, troubleshooting</li>
+                  </ul>
+              </accordion-group>
+          </accordion>
+          <accordion close-others="oneAtATime" class='box-head'>
+            <accordion-group heading="Interests" is-open="status.isFirstOpen" class="box-faq">
+                  <ul>
+                    <li class="check-box">Ice Hockey</li>
+                    <li class="check-box">Rugby</li>
+                    <li class="check-box">Value Investing</li>
+                    <li class="check-box">Entrepreneurship</li>
+                  </ul>
+              </accordion-group>
+          </accordion>
+          <accordion close-others="oneAtATime" class='box-head'>
+            <accordion-group heading="Sports Teams" is-open="status.isFirstOpen" class="box-faq">
+                  <a href="http://bruins.nhl.com/" target="_blank"><img src="assets/images/bruins.jpg" class="picture-list pull left"></a>
+                  <a href="http://devils.nhl.com/index.html" target="_blank"><img src="assets/images/devils.png" class="picture-list pull left"></a>
+                  <a href="http://www.manchestermonarchs.com/splash/" target="_blank"><img src="assets/images/marnarchs.png" class="picture-list pull left"></a>
+                  <a href="http://www.unhwildcats.com/sports/mice/index" target="_blank"><img src="assets/images/unh.jpg" class="picture-list pull left"></a>
+                  <a href="http://www.fcbayern.de/en/" target="_blank"><img src="assets/images/munich.jpg" class="picture-list pull left"></a>
+                  <a href="http://www.patriots.com/" target="_blank"><img src="assets/images/pats.jpg" class="picture-list pull left"></a>
+                  
+              </accordion-group>
+          </accordion>
+          <accordion close-others="oneAtATime" class='box-head'>
+            <accordion-group heading="Books" is-open="status.isFirstOpen" class="box-faq">
+                  <a href="http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=intelligent+investor" target="_blank"><img src="assets/images/ie.jpg" class="book-list pull left"></a>
+                  <a href="http://www.amazon.com/s/ref=nb_sb_ss_c_0_32?url=search-alias%3Daps&field-keywords=you+can+be+a+stock+market+genius&sprefix=you+can+be+a+stock+market+Genius%2Caps%2C479&rh=i%3Aaps%2Ck%3Ayou+can+be+a+stock+market+genius" target="_blank"><img src="assets/images/greenblatt.jpg" class="book-list pull left"></a>
+                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=art+of+war&rh=i%3Aaps%2Ck%3Aart+of+war" target="_blank"><img src="assets/images/artofwar.jpg" class="book-list pull left"></a>
+                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=Animal+Farm&rh=i%3Aaps%2Ck%3AAnimal+Farm" target="_blank"><img src="assets/images/animalfarm.jpg" class="book-list pull left"></a>
+                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=one+up+on+wall+street&rh=i%3Aaps%2Ck%3Aone+up+on+wall+street" target="_blank"><img src="assets/images/oneupwallst.jpg" class="book-list pull left"></a>
+                  <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=atlas+shrugged&rh=i%3Aaps%2Ck%3Aatlas+shrugged" target="_blank"><img src="assets/images/as.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=lean+start+up&rh=i%3Aaps%2Ck%3Alean+start+up" target="_blank"><img src="assets/images/leanstartup.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=guns+germs+steel&rh=i%3Aaps%2Ck%3Aguns+germs+steel" target="_blank"><img src="assets/images/gjs.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=venture+deals&rh=i%3Aaps%2Ck%3Aventure+deals" target="_blank"><img src="assets/images/venturedeals.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=founders+dillema&rh=i%3Aaps%2Ck%3Afounders+dillema" target="_blank"><img src="assets/images/fd.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=The+prince&rh=i%3Aaps%2Ck%3AThe+prince" target="_blank"><img src="assets/images/prince.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=innovators+dilema&rh=i%3Aaps%2Ck%3Ainnovators+dilema" target="_blank"><img src="assets/images/iv.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=contrarian+investment+strategies&rh=i%3Aaps%2Ck%3Acontrarian+investment+strategies" target="_blank"><img src="assets/images/cvis.jpg" class="book-list pull left"></a>
+                   <a href="http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=professional+javascript&rh=i%3Aaps%2Ck%3Aprofessional+javascript" target="_blank"><img src="assets/images/js.jpg" class="book-list pull left"></a>
+              </accordion-group>
+          </accordion>
+        </div> <!-- End Form and accordian quick facts -->
+
+      <div class="col-sm-6">
+        <div class="row">
+        <img src="assets/images/phone.png" class="pull-left form-picture">
+        <br>
+        <h2 class="boldBlue">Contact me with inquiries.</h2>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="customerName">Name</label>
+            <input type="email" class="form-control" id="customerName" placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="customerEmail">Email</label>
+            <input type="password" class="form-control" id="customerEmail" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <label for="customerMessage">Enter Message</label>
+            <textarea class="form-control" rows="4" id="customerMessage" placeholder="Enter message here.."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-success btn-block disabled">Submit</button>
+        </form>
+        <br>
+      </div><!-- End col-6-sm -->
+    </div> <!-- End  row -->
+  </div>  <!-- End container for log in -->
+
+<footer>
+      <div class="container">
+        <div class="row">
+          <div class= "col-sm-2">
+            <h6>Copyright &copy; 2014-2015 Douglas Jacobson</h6>
+          </div><!-- End col-2 -->
+          <div class= "col-sm-4">
+            <h6>About</h6>
+            <p>I am an engineer by training, and aspiring web developer.  This site is my virtual portfolio.  For more of my work, please contact me or check out my GITHUB account.  </p>
+          </div><!-- End col-4 -->
+          <div class= "col-sm-2"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-2">
+                 <br><br><br>
+                  <a href="http://www.facebook.com/djunh" target="_blank">
+                  <img alt="Brand" src="assets/images/facebook.png">
+                  </a>
+                  <a  href="http://twitter.com" target="_blank">
+                  <img alt="Brand" src="assets/images/twitter.png">
+                  </a>
+                  <a href="www.google.com" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/instagram.png">
+                  <a href="https://github.com/djunh1" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/github.png">      
+          </div><!-- End col-2 -->
+        </div> <!-- End Row -->
+      </div> <!-- End Container -->
+    </footer> <!-- END OF FOOTER -->

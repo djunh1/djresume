@@ -1,0 +1,91 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  <br><br>
+    <h1>Unassisted</h1>
+    <p class="lead">The Blog</p>
+  </div>
+</header>
+
+
+<section data-ng-controller="BlogCtrl" data-ng-init="findOne()">
+<div data-ng-controller="BlogCtrl" data-ng-init="find()" id="blog-main">
+    <div class="container-fluid">
+        <div class="col-sm-6 blog-column">    
+            <h3 class="blog-title" data-ng-bind="blog.title"></h3>
+                <div class="posted-date">
+                    <span class="glyphicon glyphicon-time "></span><span> </span><small data-ng-bind="blog.created | date:'fullDate'"></small><span> at </span><small data-ng-bind="blog.created | date:'shortTime'"></small>
+                </div>
+                <div class="by-writer">
+                    <span>By </span><smalldata-ng-bind="blog.creator.name" ></small>
+                </div>
+                <img src="http://placehold.it/600x300" class="img-responsive img-round">
+                <hr>
+                <p data-ng-bind="blog.content" class="text-less-emphasis blog-text"></p>
+                <div class="blog-tags">
+                    <span>X comments</span> <span>| tags: tag 1 tag2 etc</span>
+                </div>
+                <hr class="blog-hr">
+      </div>
+      <div class="col-sm-3 blog-side">
+            <div class="admin-menu" ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" >
+                <h4 class="text-center">Admin Menu</h4>
+                <a href="/blog/create" class="btn btn-primary btn-block blog-create-button" ng-show="isAdmin()" ng-class="{active: isActive('/admin')}">Add New Post</a>
+                <a href="/blog/{{blog._id}}/edit" ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="btn btn-success btn-block blog-create-button">Edit Post</a>
+                <a href="#" data-ng-click="delete();" ng-show="isAdmin()" ng-class="{active: isActive('/admin')}" class="btn btn-danger btn-block blog-create-button">Delete Post</a>
+            </div>
+            <h3 class="side-blog-title">Search</h3>
+            <input type="text" class="form-control" id="blogSeach" placeholder="Search">
+            <br>
+            <h3 class="side-blog-title">Subscribe</h3>
+            <label for="blogSubscribe">Recieve updates:</label>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter your email address">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
+            <h3 class="side-blog-title">Recent Posts</h3>
+            <h3 class="side-blog-title">Catigories</h3>
+            <h3 class="side-blog-title">Archive</h3>
+            
+        </div>
+   </div>
+</div>
+
+</section>
+
+
+
+
+
+<footer>
+      <div class="container">
+        <div class="row">
+          <div class= "col-sm-2">
+            <h6>Copyright &copy; 2014-2015 Douglas Jacobson</h6>
+          </div><!-- End col-2 -->
+          <div class= "col-sm-4">
+            <h6>About</h6>
+            <p>I am an engineer by training, and aspiring web developer.  This site is my virtual portofolio.  For more of my work, please contact me or check out my GITHUB account.   </p>
+          </div><!-- End col-4 -->
+          <div class= "col-sm-2"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-2">
+                 <br><br><br>
+                  <a href="http://www.facebook.com/djunh" target="_blank">
+                  <img alt="Brand" src="assets/images/facebook.png">
+                  </a>
+                  <a  href="http://twitter.com" target="_blank">
+                  <img alt="Brand" src="assets/images/twitter.png">
+                  </a>
+                  <a href="www.google.com" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/instagram.png">
+                  <a href="https://github.com/djunh1" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/github.png">      
+          </div><!-- End col-2 -->
+        </div> <!-- End Row -->
+      </div> <!-- End Container -->
+    </footer> <!-- END OF FOOTER -->

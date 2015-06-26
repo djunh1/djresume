@@ -1,0 +1,82 @@
+*{
+   -webkit-box-sizing: border-box;
+      -moz-box-sizing: boarder-box;
+       -ms-box-sizing: boarder-box;
+           box-sizing: border-box;
+}
+
+body {
+   
+   font-family: 'Lato', sans-serif;
+   color: #0000CC;
+   font-weight: 400;
+   -webkit-font-smoothing:antialiased;
+   text-rendering:optimizelegibility;
+   padding-top:1px;
+   background:linear-gradient(#fff, #F8F8F8);
+   font-size: 16px;
+   line-height: 1.375em;
+
+}
+
+h2,h3{
+	color: #0000CC;
+  font-weight: 300;
+  font-size: 35px;
+}
+
+h3{
+  font-size: 30px;
+}
+
+.text-education{
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.text-dates{
+	font-size: 14px;
+	font-style: italic;
+}
+
+.text-about{
+  font-weight: 300;
+  font-size: 18px;
+  color: #000;
+  background: #fff ; 
+  color: #000;
+ 
+}
+
+.resume{
+	background-color: #E8E8E8 ;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.resume_decoration{
+	width:85%;
+	border-width: 3px;
+	border-color: #A0A0A0 ;
+	color: #A0A0A0 ;
+}
+
+ul.dutiesBullet  {
+    list-style-type: square;
+}
+
+.even, .odd{
+  margin:5px;
+  padding:10px;
+  border-radius: 3px;
+  line-height: 1.25em;
+  font-weight: 400;
+  border: 2px solid #C0C0C0  ;
+  background:linear-gradient(#F8F8F8 , #F8F8F8);
+}
+
+.odd{
+  background:linear-gradient(#F8F8F8 , #F8F8F8);
+}

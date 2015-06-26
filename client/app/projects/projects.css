@@ -1,0 +1,269 @@
+
+.panel-projects{
+	margin-top: 50px;
+	padding:10px;
+	color: #000;
+	overflow-y:hidden;
+	max-height: 600px; 
+	border: 2px solid #000 ;
+	overflow-x: scroll;
+}
+
+.nav-pills > li.active > a,  .nav-pills > li.active > a:focus {
+  color: #E8E8E8 ;
+  background-color: #000;
+}
+.nav-pills > li.active > a:hover{
+	background-color: #000 ;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.nav-pills > li a:hover{
+	background-color: #000;
+	color:#fff;
+}
+
+a:hover{
+	color: #C8C8C8 ;
+	text-decoration: none;
+	font-size: 1.02em
+}
+
+.project{
+  margin:5px;
+  padding:10px;
+  border: 1px solid #C0C0C0 ;
+  border-radius: 7px;
+  line-height: 1.25em;
+  font-weight: 400;
+  border: 2px dotted #C0C0C0  ;
+  background:linear-gradient(#F8F8F8   , #F8F8F8  ); 
+  height: 450px;
+}
+
+.projecteffect{
+	transition:all 0.5s ease;
+	box-shadow: inset 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
+}
+
+.anchor {
+  border: 2px dashed DarkOrchid;
+  padding: 10px 10px 200px 10px;
+}
+
+.fixed-header {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+}
+
+.fixed-header > a {
+  display: inline-block;
+  margin: 5px 15px;
+}
+
+
+
+.research{
+  background:linear-gradient(#FFFF99 , #FFFF99); 
+  
+}
+
+.jas{
+ 	background:linear-gradient(#66FF66 , #66FF66); 
+}
+
+.waters{
+ 	background:linear-gradient(#FFF , #FFF); 
+  
+}
+
+.research-picture, .research-picture-small, .resarch-picture-medium {
+	width:65%;
+	border: 2px solid #000;
+	display: block;
+    margin:5px auto;
+}
+
+.research-picture-small{
+	width:25%;
+	float: right;
+	margin:15px;
+}
+
+.research-picture-medium{
+	width:40%;
+	border: 2px solid #000;
+	display: block;
+    margin:5px auto;
+}
+
+.text-checkmarks{
+	font-size: 16px;
+	color: #3366CC;
+	font-weight: 300;
+	text-indent: 0px;
+  line-height: 1.23em;
+}
+
+.text-figure{
+	text-indent: 25%;
+	font-size: 15px;
+}
+
+.text-carousel{
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.carousel-caption{
+	background-color: rgba(0,0,0,0.5);
+	padding:10px;
+	border-radius: 3px;
+
+
+}
+
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 300px; /*slider height*/
+}
+
+.carousel .item img {
+    width: 100%; /*img width*/
+}
+
+.carousel .carousel-control {
+    background: none;
+    border: none;
+    top: 50%;
+}
+
+.carousel .item {
+  -webkit-transition: opacity 2s; 
+  -moz-transition: opacity 2s; 
+  -ms-transition: opacity 2s; 
+  -o-transition: opacity 2s; 
+  transition: opacity 2s;
+}
+.carousel .active.left {left:0;opacity:0;z-index:2;}
+.carousel .next {left:0;opacity:1;z-index:1;}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+}
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.toggle(
+  -webkit-transition: -webkit-transition: linear 1s;
+  -moz-transition: linear 1s;
+  -ms-transition: linear 1s;
+  -o-transition: linear 1s;
+  transition: linear 1s;
+}
+
+.toggle.ng-enter{
+  opacity: 0;
+}
+
+.toggle.ng-enter-active{
+  opacity: 1;
+}
+
+.toggle.ng-leave{
+  opacity: 1;
+}
+
+.toggle.ng-leave-active{
+  opacity: 0;
+}
+
+/* Table */
+
+
+.mypalTable2 thead>tr{
+  
+   background: linear-gradient(#E0E0E0 , #A8A8A8); 
+   color: #000066;
+   padding: 1px 4px 1px, 4px;
+   border-bottom: 1pt solid #B8B8B8;
+   font-size: 12px;
+   font-weight: bold;
+  
+}
+
+.mypalTable2 thead>tr>th{
+  line-height: .65;
+}
+
+.mypalTable2 th:first-child{
+  border-top-left-radius:6px;
+}
+
+.mypalTable2 td:first-child {
+  border-left: 1px solid #cecfd5;
+}
+
+.mypalTable2 td:last-child {
+  border-right: 1px solid #cecfd5;
+}
+
+.mypalTable2 th:last-child{
+  border-top-right-radius:6px;
+}
+
+.mypalTable2 thead>tr>th{
+  vertical-align: middle;
+}
+
+.mypalTable2 tbody tr:last-child,
+.mypalTable4 tbody tr:last-child,
+.transaction-table tbody tr:last-child {
+  border-bottom: 1px solid #cecfd5;
+}
+
+
+.mypalTable2 tbody>tr>td{
+   background-color: #E8E8E8;
+   color: #000000;
+   line-height: 50%;
+   padding-top: 14px;
+   border-top: 1px dashed #B8B8B8;
+   border-bottom: 1px dashed #B8B8B8;
+   font-size: 12px;
+} 
+
+.mypalTable2 tfoot>tr>td{
+   background-color: #99FFCC ; 
+   color: #000066;
+   padding: 1px 8px 1px, 8px;
+   border-bottom: 1pt solid #B8B8B8;
+   border-top: 1pt solid #B8B8B8;
+   font-size: 12px;
+   font-weight: bold;
+
+}
+
+

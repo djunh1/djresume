@@ -1,0 +1,28 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<section data-ng-controller="BlogCtrl" data-ng-init="findOne()">
+	<h1>Edit Article</h1>
+	<!-- The edited article form -->
+	<form data-ng-submit="update()" novalidate>
+		<div>
+			<label for="title">Title</label>
+			<div>
+				<input type="text" data-ng-model="blog.title" id="title" placeholder="Title" required>
+			</div>
+		</div>
+		<div>
+			<label for="content">Content</label>
+			<div>
+				<textarea data-ng-model="blog.content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+			</div>
+		</div>
+		<div>
+			<input type="submit" value="Update">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+	</div>
+</section>

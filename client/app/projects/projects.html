@@ -1,0 +1,272 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  <br><br>
+    <h1>Projects</h1>
+    <p class="lead">Engineering and technical projects</p>
+  </div>
+  <div class="projCarousel">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="max-height:300px; margin:0 auto;">
+        <div class="carousel-caption">
+
+          <h4 class="text-carousel">{{$title}}</h4>
+          <p class="text-carousel">{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</header>
+
+<div class="container" ng-controller="ProjectsCtrl">
+	<div class="row">
+	<br>
+	  <div class="col-lg-12">
+		<section>
+			<ul class="nav nav-pills">
+				<li ng-class="{active:isSelected(1)}">
+					<a href="" ng-click="selectTab(1)">Engineering Projects</a>
+				</li>
+				<li ng-class="{active:isSelected(2)}">
+					<a href="" ng-click="selectTab(2)">Code</a>
+				</li>
+				<li ng-class="{active:isSelected(3)}">
+					<a href="" ng-click="selectTab(3)">Web Applications</a>
+				</li>
+			</ul>
+			<div class="panel panel-projects" ng-show="isSelected(1)" >
+				<div ng-repeat="projectItem in engProjects" class="col-xs-3 project" ng-mouseenter="hover = true" ng-mouseleave="hover=false" ng-class="{projecteffect:hover}" ng-click="getProject()">
+					<h3 class="text-center">{{projectItem.title}}</h3>
+					<img src="{{projectItem.pictureUrl}}" class="img-circle img-responsive">
+					<a href="" ng-click="gotoAnchor(projectItem.id)" target="_blank">{{projectItem.descriptionBrief}}</a>
+				</div>
+				<br style="clear:both"> 
+				<!-- Don't hate the simple clearfix solution.  Yup.  Unassisted baby -->
+			</div>
+			<div class="panel panel-projects" ng-show="isSelected(2)">
+				<h3 class="text-center">Coming soon..</h3>
+			</div>
+			<div class="panel panel-projects" ng-show="isSelected(3)">
+				<h3 class="text-center">Coming soon..</h3>
+			</div>
+		</section>
+	</div>
+</div>
+</div>
+	<!--
+	<div id="anchor{{x.id}}" class="anchor col-lg-12" ng-repeat="x in engProjects">
+	  <h2>{{x.title}}</h2>
+	</div> -->
+
+
+<div class="container" ng-controller="ProjectsCtrl as test">
+		<!--<button class="btn btn-success" ng-click="test.toggle=!test.toggle">View Masters Research</button>-->
+	<div class="row" class="toggle" ng-if="test.toggle">
+		<div class="col-lg-12 about-body research">
+			<h2 class="header-text">End Mill Runout Estimation</h2>
+
+			<figure>
+			  <img src="assets/images/runout.jpg" class="research-picture-small">
+			  <figcaption></figcaption>
+			</figure>
+			
+			<p class="text-body">Runout is a phenomenon where the geometric center of rotation of an object differs from the actual center of rotation.    In end mill applications such as CNC cutting, cutter runout can introduce error into high tolerance multi-tooth cutting operations.  This miss-aliment is a result of the cutting tool, the cutting tool holder, and all tolerance errors therein.   </p>
+
+
+			<p class="text-body">The normal process to measure runout is laborious and error prone.  The mechanic would position the tool in proximity to a dial indicator.  They would rotate the tool and measure the relative deflection of each tooth to one another.   Typical measurements were on the order of magnitude of several ten-thousandths of an inch ( 0.0001”).  Would you trust a handheld device to reliably, repeatedly measure with these tolerances?   The goal of my research was to develop a quick, reliable way to do with using mechanistic models and sensor technologies. </p>
+
+
+			<p class="text-body">The first step I took in my research was to define a model which would describe the cutting process.   The forces were decomposed based on the spatial location of the end mill, the cutting angle, how deep the cut was into the work piece, and material coefficients.  The resulting model was a representation of x and y force components.  The basic free body diagram is seen in <b>Figure 1</b> below.  </p><br>
+			<figure>	
+
+			<img src="assets/images/runout2.png" alt="runout" class="img-rounded research-picture-medium">
+			<figcaption class="text-less-emphasis text-figure"><b>Figure 1.</b> Free Body Diagram for force acting on a cutting tool during a cut</figcaption>
+			</figure>
+			<br>
+
+			<p class="text-body"> Next , we looked at real experimental data from our dynamometers we had installed into our CNC machine.  In a perfect world, the time series graph of a cutting tool would emulate that of a sinusoid.  As the cutting tool enters the material, it increases in force until there is no more material to remove.  This would be equally true of all cutting edges as they remove material.   However, in the real world, cutting tool imperfections such as runout change how this force signature appears on a graph.  In <b>Figure 2</b> below, one can see the effect of runout on an actual test cut.  As a tool with unequal distances to its center of rotation cut, some teeth do more of the work and some do less.  Thus a time series force profile is produced.   </p>	<br>
+
+			<figure>
+			<img src="assets/images/runout1.jpg" alt="runout" class="img-rounded research-picture-medium">
+			<figcaption class="text-less-emphasis text-figure"><b>Figure 2.</b> Time series plot of the Forces in the X (feed) direction during a test cut.</figcaption>
+			</figure>
+
+			<br>
+			<p class="text-body"> The time domain force signal was of particular interest and was subsequently decomposed into individual force magnitudes of individual frequencies.  Previous work by (Kline and DeVor 1982) had shown experimentally that runout was correlated to variations of spindle frequencies – once per revolution.  <b>Figure 2</b> shows this occurring.  The first step was to revalidate these results in our own laboratory.  This was done by performing a whole host of tests involving different cutting parameters, tools, and materials.  Eventually a statistical sound correlation was found between runout and a time domain frequency component during cutting.  </p>
+
+			<figure>
+			<img src="assets/images/runout3.jpg" alt="runout" class="img-rounded research-picture-medium">
+			<figcaption class="text-less-emphasis text-figure"><b>Figure 3.</b> An FFT of the same cut in Figure 2. </figcaption>
+			</figure>
+
+			<br>
+			<p class="text-body">   The figure above <b>Figure 3</b> shows the same cut but as an Fast Fourier transform  (FFT for short).   An FFT takes a time domain signal and breaks it down into frequencies.  This allows an aggregate of periodic data to be summarized nicely.  By understanding that runout was related directly to an observable frequency component, we could begin to work on a model to predict it.  The model would use the feed force component as a starting point and estimate tool runout.  This was done using a closed model ratio which included material coefficients and deflection of each cutting edge to get right (the last part baffled me for an entire summer).  In short, a sound mathematical model and MATLAB program were employed to estimate runout based on experimental data.    </p>
+
+				<div class="row">
+					<div class="col-xs-1"></div>
+					<div class="col-md-5">
+					<h3>Overall Results</h3>
+						<div class="table-responsive">
+						
+						<table class="table table-hover mypalTable2">
+					 	 <thead>
+
+				          <th >Measured Runout (&#181;m)</th>
+				          <th >Predicted Runout (&#181;m)</th>
+				          <th >% error</th>
+				      </thead>
+				      <tbody>
+				      	<tr ng-repeat="runout in runoutValues">
+					      	<td>{{runout.measuredR}}</td>
+					      	<td>{{runout.predictedR}}</td>
+					      	<td>{{runout.error}}</td>
+				      	</tr>
+				      </tbody>
+					 </table>	
+					 </div>
+				 </div>
+				 <div class="col-lg-6">
+				 	<h3>Summary</h3>
+				 	<ul class="text-checkmarks">
+					 	<li><a href="http://proceedings.asmedigitalcollection.asme.org/proceeding.aspx?articleid=1602024" target="_blank">Please visit this link to see the entire publication</a></li>
+				 		<li> Force signals can be used to determine Cutting tool conditions.</li>
+				 		<li> A combination of sensors and robust models make predictions more reliable.</li>
+				 		<li> Runout was calculated and showed a wide range of standard errors.</li>
+				 		<li> This project taught me never to give up on research and always change ones perception to get to the right solution.</li>
+				 	</ul>
+				 </div>
+			 </div>
+		 </div>
+	</div>		 
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 about-body jas">
+			<h2 class="header-text">Algae Biofuels</h2>
+
+					
+			<p class="text-body">In 2009, myself and two other co-founders undertook a business opportunity with Alliant Techsystems (ATK) in Radford Virginia.  Algae are considered one of the most viable biofuel candidates in the world.  Their reproductive cycle is very short, and they are able to produce high quality fuels for practical and commercial applications.   We partnered with Virginia Tech and Radford University to perform a biological research project to determine the feasibility of an algae based bioremediation facility.  </p>
+
+			<figure>
+			<img src="assets/images/algaecloseup.jpg" alt="algae" class="img-rounded research-picture-medium">
+			
+			</figure>
+			<br>
+
+
+			<p class="text-body"> Microalgae populations can double their size within 24 hours under ideal conditions. See <b>Figure 1</b> Scientists have been studying microalgae for decades in wastewater systems to learn how they grow, what pollutants they can sequester, and how to genetically modify them.  The general consensus is that the major factors that affect algal colonies include temperature, medium composition, incident light intensity, aeration/agitation of growth media, and pH.  Algae typically grow best in 68-92 degrees F (20-33 degrees C) water with a pH of 7.4-9.0 and continuous agitation.  As seen in  <b>Figure 1</b>, Neochloris oleoabundans doubled its population quickly with different quantities of Nitrates in solution.  This shows that algae , in theory, could be a robust solution to effluent waste stream sequestration.   </p>
+
+
+
+
+			<p class="text-body">For the feasibility study, an algae growth apparatus was constructed and utilized.  We designed the experiments, adjusted all growth parameters  measured the growth rates, and nitrate uptakes of 4 species ;   Neochloris oleoabundans, Scenedesmus dimorphus, Scenedesmus obliquus, and Chlamydomonas pseudagloe.  Our experimental design consisted of 3 levels of wastewater composition, 2 levels of Carbon Dioxide levels, and 3 levels of diurnal light cycles (Fall, Summer, Winter).   </p><br>
+			<figure>	
+
+			<img src="assets/images/algae1.jpg" alt="runout" class="img-rounded research-picture-medium">
+			<figcaption class="text-less-emphasis text-figure"><b>Figure 1.</b> Growth rates of microalgae in wastewater</figcaption>
+			</figure>
+			<br>
+
+			<p class="text-body">Algae growth is tracked by counting the cell content of a batch sample.  Typical laboratory practices use proxies in order to measure cell count, and wait for algal populations to acquire exponential growth.  We chose to model microalgae population growth based upon time required for a culture to double its population. This is a rather arbitrary metric in order to model the growth of a species, but a species which can double its size and continue growing is relatively healthy. Doubling time is also a point of reference in research, thus it provides one with an apples to apples comparison with some species in regards to colony growth.   Overall nitrate uptake is determined by measuring nitrates (NO3-) within the algae media at multiple stages.  The results show percentage of nitrate removed from the wastewater as a function of time.  Nitrate uptake is effectively a response to introducing microalgae cultures to a system.   </p>	<br>
+
+			<img src="assets/images/algae2.jpg" alt="runout" class="img-rounded research-picture-medium">
+			<figcaption class="text-less-emphasis text-figure"><b>Figure 2.</b> A fitted distribution for the Nitrate uptake of Scenedesmus Dimorphus</figcaption>
+			</figure>
+
+			<br>
+			<p class="text-body"> A wide range of results were observed during the study - see  <b>Figure 3</b>.  While each algae significantly increased its population, there was a great deal of variation between similar species.  For example, the figure above shows a normally fitted distribution of Nitrogen uptake for one of the species we grew.  The overarching thesis was that if Algae could consume nitrates in large quantities in short periods of time, they would be a suitable solution to wastewater effluent streams.</p>
+
+
+
+			
+
+			<div class="row">
+			<div class="col-xs-1"></div>
+				<div class="col-md-5">
+					<h3>Overall Results</h3>
+					<div class="table-responsive">
+					<table class="table table-hover mypalTable2">
+				 	 <thead>
+
+			          <th >Algae Species</th>
+			          <th >Doubling Time</th>
+			          <th >Nitrates Removed</th>
+			      </thead>
+			      <tbody>
+			      	<tr ng-repeat="algae in algaeValues">
+				      	<td>{{algae.algae}}</td>
+				      	<td>{{algae.growth}} Hours</td>
+				      	<td>{{algae.nitrates}} %</td>
+			      	</tr>
+			      </tbody>
+				 </table>
+				 </div>	
+			 </div>
+			 <div class="col-md-6">
+			 	<h3>Summary</h3>
+			 	<ul class="text-checkmarks">
+				 	<li>Benchtop Studies yielded good preliminary results advocating for Microalgae as a wastewater solution</li>
+			 		<li> Economic feasiblity would be determined by dual purpose use -  fuel development and wastewater treatment</li>
+			 		<li> Algae will consume Nitrates and Carbon Dioxide from Waste streams</li>
+			 		<li> This project underpinned how difficult it was to get a business of the ground based on an idea with no short term promise of profit.</li>
+			 	</ul>
+
+			 </div>
+		 </div>
+	 </div>
+   </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 about-body waters">
+			<h2 class="header-text">LABVIEW sensor calibration</h2>	
+			<p class="text-body"> This project focused on improving the calibration process for our pressure sensors in our lab.  The sensors experienced significant drift so they had to be recalibrated by hand.  The process was slow, and required the use of a hand pump to increase and decrease pressures in order to align them to raw sensor output.  There was room for error, but this method produced usable results.</p>
+			<img src="assets/images/labview1.jpg" alt="hand pump" class="img-rounded research-picture-small">
+			<br>
+			<p class="text-body"> With some left over money from our department’s budget, I proposed buying a simple Labview test bed.  This set up would be similar to the one used in my graduate research.  A data acquisition card (DAQ) would input digital data to a computer with a software backend to manipulate the data using Labview.  Labview provides a graphical user interface and programming in order to manipulate the data and display it as required.  The goal for my program was to allow a button to collect calibration constants and run a linear regression scheme to attain those constants.</p>
+			<figure>
+			<img src="assets/images/DAQ_System.jpg" alt="daq" class="img-rounded research-picture-medium">
+			<figcaption class="text-less-emphasis text-figure"><b>Figure 1.</b> A simple Labview data test bed</figcaption>
+			</figure>
+			<br>
+			<p class="text-body"> The first step was to determine a way to measure multiple sensors at one time.  This would be relatively simple if one situated an array of sensors in a daisy chain.  This way the person calibrating the sensors would be able to do so for more than one at the same time.  The next step was to wire in each of the sensors into the DAQ and write a Labview program to accept the raw signal data.  Labview provides a somewhat intuitive graphic interface in substitution for an actual program.  This allowed me to write a simple linear regression model and provide calibration constants to each pressure sensor.</p>
+		 </div>
+	</div>
+</div>
+
+
+
+
+<footer>
+      <div class="container">
+        <div class="row">
+          <div class= "col-sm-2">
+            <h6>Copyright &copy; 2014-2015 Douglas Jacobson</h6>
+          </div><!-- End col-2 -->
+          <div class= "col-sm-4">
+            <h6>About</h6>
+            <p>I am an engineer by training, and aspiring web developer.  This site is my virtual portfolio.  For more of my work, please contact me or check out my GITHUB account.  </p>
+          </div><!-- End col-4 -->
+          <div class= "col-sm-2"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-2">
+                 <br><br><br>
+                  <a href="http://www.facebook.com/djunh" target="_blank">
+                  <img alt="Brand" src="assets/images/facebook.png">
+                  </a>
+                  <a  href="http://twitter.com" target="_blank">
+                  <img alt="Brand" src="assets/images/twitter.png">
+                  </a>
+                  <a href="www.google.com" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/instagram.png">
+                  <a href="https://github.com/djunh1" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/github.png">      
+          </div><!-- End col-2 -->
+        </div> <!-- End Row -->
+      </div> <!-- End Container -->
+    </footer> <!-- END OF FOOTER -->

@@ -1,0 +1,90 @@
+.blog-title{
+	font-weight: 300;
+	color: #000;
+	background-color: #fff;
+	font-size: 40px;
+	width:380px;
+	
+}
+
+.side-blog-title{
+	font-weight: 240;
+	color: #787878;
+}
+
+.blog-create-button{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.blog-column{
+	margin-top: 15px;
+	margin-left: 10%;
+	background-color: #fff;
+	border: 2px solid #000;
+}
+
+.blog-side{
+	background-color: #fff;
+	border: 2px solid #000;
+	margin-top: 15px;
+	margin-left: 3px;
+	border-radius: 2px;
+
+}
+
+.blog-date{
+	position: relative;
+	position-right:300px;
+	position-top:15px;
+}
+
+#blog-main{
+  background: url('../../assets/images/blog-background.png') top center repeat-y;
+  background-size: 100%;
+  
+}
+
+.by-writer{
+	margin-top: 10px;
+	color: #A0A0A0;
+	font-weight: bold;
+	float: left;
+}
+
+.posted-date{
+	float:right;
+	color: #A0A0A0;
+	font-weight: bold;
+	background-color: rgba(0,0,0,0.06);
+	margin: 3px;
+	padding :5px;
+
+}
+
+.blog-text{
+	padding:10px;
+}
+
+.blog-entries{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.blog-tags{
+	font-size: 12px;
+	margin-left: 3%;
+	margin-top: 40px;
+
+}
+
+.blog-hr{
+	border-color: #000;
+}
+
+.admin-menu{
+	border: 2px dashed #000;
+	border-radius: 2px;
+	padding:15px;
+	margin: 6px;
+}

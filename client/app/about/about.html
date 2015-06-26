@@ -1,0 +1,83 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  <br><br>
+    <h1>Doug Jacobson</h1>
+    <p class="lead">My online portfolio</p>
+    
+  </div>
+  
+</header>
+
+<div class="container">
+	<div class="col-md-8 about-body">
+		<h4 class="header-text">Overview</h4>
+
+			<carousel interval="myInterval" class="img-div">
+		      <slide ng-repeat="slide in slides" active="slide.active">
+		        <img ng-src="{{slide.image}}" style="max-height:250px; margin:0 auto;">
+		      </slide>
+	   		 </carousel>
+	    
+	    	<h3 class="about-header">Summary</h3>
+			<p class="text-body">I was born and raised in Hopewell New Jersey.  After high school, I attended the University of New Hampshire (UNH) with a focus in Mechanical Engineering.  My first job after UNH took me to Boston where I worked for a medical device company called Waters.  A few years later, I took a design job at GOSS International in New Hampshire.  The recession claimed many jobs in 2009, mine included.  It was at this point I co-founded a small company named JAS Energy in Blacksburg Virginia.   I currently am working as an engineer at Portsmouth Naval Shipyard.</p>
+
+			<p class="text-body">My academic interests lie in technology, business, finance, and investing.  I am avidly seeking new investment opportunities within the stock market.  My philosophy is that of a classic value investor following the teachings of Ben Graham, and Warren Buffet, and am always looking to buy stock of well performing stock at depressed prices.   I am also interested in the world of business and business development.  My most current interests lie in web development, most notably JavaScript and front end/back end frameworks.  In the near future, I will be developing fully interactive, rich, and useful web applications from scratch.  Please check back here often for updates. </p>
+
+			<h3 class="about-header">Outside of work</h3>
+
+			<p class="text-body">When I am not busy with work or a project, I like to keep an active social life.  I work out on a daily basis and believe in healthy living.  I’ll play most sports, but I enjoy Ice hockey (or street) the most.  Many say I have a pretty good shot, but it isn’t quite an NHL release just yet!  When the weekend comes around, I like to make time after a productive day to enjoy a night out with friends.  Travelling is another passion of mine.  I have been overseas a few times, most notably in 2014 when I backpacked on my own through three countries.  It was a great experience and I met a lot of great people along the way.  </p>
+		
+	</div>
+	<div class="col-md-3 about-body">
+		<h4 class="header-text">Details</h4>
+		<h3 class="about-header">Doug Jacobson</h3><br>
+		<h5 class="about-header">Email Me</h5>
+		<span class="glyphicon glyphicon-envelope about-header-body" aria-hidden="true"></span><a href="mailto:djunh1@gmail.com"> djunh1@gmail.com</a><br><br>
+		<h5 class="about-header">Resume</h5>
+		<span class="glyphicon glyphicon-check about-header-body" aria-hidden="true"></span><a href="../assets/files/dj.resume.pdf"  target="_blank"> Download CV</a><br><br>
+		<h5 class="about-header">Social Media</h5>
+		 <div class="social-media">
+			  <a href="http://www.facebook.com/djunh" target="_blank" class="">
+	         	 <img alt="Brand" src="assets/images/facebook2.png">
+	          </a>
+	          <a  href="https://www.linkedin.com/profile/view?id=19536784&authType=NAME_SEARCH&authToken=emvD&locale=en_US&srchid=195367841427326750206&srchindex=1&srchtotal=72&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A195367841427326750206%2CVSRPtargetId%3A19536784%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A" target="_blank">
+	       	   <img alt="Brand" src="assets/images/linkedin.png">
+	          </a>
+	          <a href="https://github.com/djunh1" target="_blank">
+	         	 <img alt="Brand" src="assets/images/github2.png">
+	          </a>
+         </div>     
+	</div>
+</div>
+
+<footer>
+      <div class="container">
+        <div class="row">
+          <div class= "col-sm-2">
+            <h6>Copyright &copy; 2014-2015 Douglas Jacobson</h6>
+          </div><!-- End col-2 -->
+          <div class= "col-sm-4">
+            <h6>About</h6>
+            <p>I am an engineer by training, and aspiring web developer.  This site is my virtual portfolio.  For more of my work, please contact me or check out my GITHUB account.  </p>
+          </div><!-- End col-4 -->
+          <div class= "col-sm-2"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-2">
+                 <br><br><br>
+                  <a href="http://www.facebook.com/djunh" target="_blank">
+                  <img alt="Brand" src="assets/images/facebook.png">
+                  </a>
+                  <a  href="http://twitter.com" target="_blank">
+                  <img alt="Brand" src="assets/images/twitter.png">
+                  </a>
+                  <a href="www.google.com" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/instagram.png">
+                  <a href="https://github.com/djunh1" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/github.png">      
+          </div><!-- End col-2 -->
+        </div> <!-- End Row -->
+      </div> <!-- End Container -->
+    </footer> <!-- END OF FOOTER -->

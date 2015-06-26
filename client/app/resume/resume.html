@@ -1,0 +1,80 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+  <br><br>
+    <h1>My Resume</h1>
+    <p class="lead">Professional experience</p>
+    <img src="assets/images/resume.gif" alt="Resume" width="90%">
+  </div>
+</header>
+
+
+<div class="resume container-fluid" ng-controller="ResumeCtrl">
+	<div class='col-sm-12 resume'>
+
+		<h2 class="text-center boldBlue">Work Experience</h2><hr class="resume_decoration">
+			<ul class="unstyled">
+				<li ng-repeat="workItem in work" ng-class-odd="'odd'" ng-class-even="'even'">
+					<span class="text-education">{{workItem.company}} - </span>
+					<span>{{workItem.title}}</span> 
+					<span class="text-dates">( {{workItem.start}} </span><span class="text-dates"> to {{workItem.end}} )</span><br><br>
+
+					<accordion close-others="oneAtATime">
+						<accordion-group heading="About {{workItem.company}}" is-open="status.isFirstOpen">
+					      <p class="text-about">{{workItem.about}}</p>
+					      <a href="{{workItem.link}}" target="_blank">Visit company webpage</a>
+					    </accordion-group>
+					</accordion>
+					<ul class="dutiesBullet">
+						<li ng-repeat="jobDuties in workItem.duties">
+							<p class="text-about">{{jobDuties.duty}}</p>
+						</li>
+					</ul>
+					
+				</li>
+				
+			</ul>
+		
+		<h2 class="text-center boldBlue">Education</h2><hr class="resume_decoration">
+			<ul class="unstyled">
+				<li ng-repeat="item in education">
+					<span class="text-education">{{item.college}}</span> <span class="text-dates"> {{item.years}}</span><br>
+					<span>{{item.major}} - </span><span>{{item.gpa}}</span><br><br>
+				</li>
+			</ul>
+
+
+			
+	</div>
+</div>
+
+<footer>
+      <div class="container">
+        <div class="row">
+          <div class= "col-sm-2">
+            <h6>Copyright &copy; 2014-2015 Douglas Jacobson</h6>
+          </div><!-- End col-2 -->
+          <div class= "col-sm-4">
+            <h6>About</h6>
+            <p>I am an engineer by training, and aspiring web developer.  This site is my virtual portfolio.  For more of my work, please contact me or check out my GITHUB account.   </p>
+          </div><!-- End col-4 -->
+          <div class= "col-sm-2"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-1"></div>
+          <div class= "col-sm-2">
+                 <br><br><br>
+                  <a href="http://www.facebook.com/djunh" target="_blank">
+                  <img alt="Brand" src="assets/images/facebook.png">
+                  </a>
+                  <a  href="http://twitter.com" target="_blank">
+                  <img alt="Brand" src="assets/images/twitter.png">
+                  </a>
+                  <a href="www.google.com" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/instagram.png">
+                  <a href="https://github.com/djunh1" target="_blank"></a>
+                  <img alt="Brand" src="assets/images/github.png">      
+          </div><!-- End col-2 -->
+        </div> <!-- End Row -->
+      </div> <!-- End Container -->
+    </footer> <!-- END OF FOOTER -->
